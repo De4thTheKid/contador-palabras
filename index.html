@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contador de palarbras</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('https://imgs.search.brave.com/_A9mS7lm-OEqrVUjoJXtGM8fYP4TItipmpaXj3eKJSY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9pbWFnZW4tcGVy/cm8tY2FsbGUtbHVu/YS1lc3RyZWxsYXNf/ODU0NzI3LTExNDcy/OS5qcGc_c2VtdD1h/aXNfaHlicmlk');
+    }
+    .contendeor {
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+    }
+    
+</style>
+
+<body>
+    <div class="contendeor">
+        <h1>Contador de Palabras</h1>
+        <div class="cont" style="display: flex; align-items: center; gap: 10px;">
+            <input type="text" id="texto" placeholder="Escribe un texto" style="flex: 1;">
+            <button onclick="contar()" class="button-sucess">Contar palabras</button>
+        </div>
+        <div id="resultado"></div>
+    </div>
+    <style>
+        .contendeor h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contendeor input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contendeor button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contendeor button:hover {
+            background-color: #218838;
+        }
+        .contendeor #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+
+    <script>
+        function contar() {
+            let texto = document.getElementById('texto').value;
+            let palabras = texto.split(' ').filter(palabra => palabra.length > 0);
+            let resultado = document.getElementById('resultado');
+
+            resultado.innerHTML = 'El texto tiene ' + palabras.length + ' palabras';
+        }
+    </script>
+</body>
+
+</html>
